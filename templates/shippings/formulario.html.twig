@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Formulario para la compra PayPal!{% endblock %}
+
+{% block bootstrap %}
+<!-- CSS Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<!-- FontAwesome 6.2.0 icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+{% endblock %}
+
+{% block shippings_css %}
+<!-- Archivo CSS en Symfony desde carpeta public -->
+<link rel="stylesheet" href="{{ asset('css/shippings.css') }}">
+{% endblock %}
+
+{% block shippings %}
+
+<div class="my-5 mx-5 border-2 rounded-lg bg-white">
+    <!-- Formulario antes de ejecutar PayPal -->
+
+    <div class="m-xs-3 m-lg-4 m-md-4">
+        <p><h2 class="font-bold text-warning pt-xs-2 pt-lg-4 pt-md-4">Pedido para cliente generado</h2></p>
+        <h2 class="font-bold text-secondary mt-xs-2 mt-lg-5 mt-md-5" id="precioTotalCompra">Importe total: 67.89 €</h2>
+
+        <nav class="navbar navbar-expand-lg bg-dark rounded mt-xs-2 mt-lg-5 mt-md-5">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-xs-2 ml-lg-2 ml-md-2">
+                        <a class="nav-link text-white inline-block text-decoration-none" href="{{ path('trabajadores') }}" id="link_paypal">
+                            <span class="fas fa-solid fa-arrow-left"></span>
+                            <span>Volver</span>
+                        </a>
+                        
+                        <button class="nav-link text-white btn btn-dark inline-block ml-xs-5 ml-lg-5 ml-md-5" id="link_paypal">
+                            <span class="fas fa-solid fa-eye"></span>
+                            <span>Mostrar formulario</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid bg-primary text-white" id="link_paypal">
+        <div class="bg-light">
+            <span class="ml-xs-2 ml-mt-4 ml-md-4">Texto de prueba</span>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block shippings_js %}
+<!-- Archivo JS en Symfony desde carpeta public -->
+<script type="text/javasript" src="{{ asset('js/shippings.js') }}"></script>
+{% endblock %}

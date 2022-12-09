@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Proyecto prueba{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block bootstrap %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {# Códigos CSS para los trabajadores y shippings #}
+        {% block trabajadores_css %} {% endblock %}
+        {% block shippings_css %} {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %} {% endblock %}
+        
+        {# Para visualizar tabla en Symfony #}
+        {% block tabla %} {% endblock %}
+
+        {# Listamos a los trabajadores en una tabla #}
+        {% block trabajadores %} {% endblock %}
+
+        {# Datos de trabajador #}
+        {% block datos_trabajador %} {% endblock %}
+
+        {# Formulario para añadir trabajadores #}
+        {% block aniadir_trabajador %} {% endblock %}
+
+         {# Formulario para editar trabajadores #}
+        {% block editar_trabajador %} {% endblock %}
+
+        {# Formulario de shippings para mi PI #}
+        {% block shippings %} {% endblock %}
+
+
+        {# Códigos JS para los trabajadores y shippings #}
+        {% block trabajadores_js %} {% endblock %}
+        {% block shippings_js %} {% endblock %}
+
+    </body>
+</html>
